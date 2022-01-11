@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>disabled/readonly</title>
+</head>
+<body>
+    <fieldset>
+        <legend>모의 글쓰기창</legend>
+        <form action="">
+            <!-- submit을 누르면 readonly는 넘어가지만 disabled는 넘어가지 않습니다 -->
+            <p>글쓴이1: <input type="text" value="읽기전용" readonly></p>
+            <p>글쓴이2: <input type="text" value="사용불가" disabled></p>
+            <p>본문 : <textarea name="" id="" cols="30" rows="10">기본값을 넣어줍니다.</textarea></p>
+            <!-- textarea는 value값을 못넣는대신 기본값을 태그를 여닫는사이에 넣어주면 됩니다. -->
+            <p><input type="submit" value="제출">
+                <input type="reset" value="초기화">
+            </p>
+        </form>
+    </fieldset>
+</body>
+</html>
