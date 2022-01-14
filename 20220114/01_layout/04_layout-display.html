@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        /* 
+        display는 박스태그를 블록태그로 만들어주거나
+        블록태그를 박스태그로 만들어주거나 혹은
+        아예 박스 자체를 화면에서 보이지않게(코드상 존재)
+        만들어주는 역활을 합니다.
+        block - 블록속성으로 전환
+        inline - 인라인속성으로 전환
+        inline-block - 해당요소를 인라인으로 만들지만 블록태그에서
+        사용하는 속성들도 사용 가능
+        none - 해당 요소를 존재하지 않는걸로 표시
+        */
+        body {font: 12px "굴림", Gulim;}
+        li {list-style: none;}
+        a:hover {color: #369;}
+        /* li가 세로방향이 아닌 가로방향으로 나열되게하는법 */
+        #gnb > li {display: inline;}
+        #gnb > li > a{display: inline-block; background-color: #c00; color: #fff; width: 100px; height: 25px; padding-top: 10px; text-align: center; text-decoration: none;}
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container">
+        <h1>주메뉴</h1>
+        <ul id="gnb">
+            <li><a href="#">COMPANY</a></li>
+            <li><a href="#">PRODUCT</a></li>
+            <li><a href="#">SERVICE</a></li>
+            <li><a href="#">COMMUNITY</a></li>
+        </ul>
+    </div>
+</body>
+</html>
