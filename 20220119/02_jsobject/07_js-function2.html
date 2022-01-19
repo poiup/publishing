@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        var num = 0;
+
+        function nextPic(){
+            num++;
+            if(num > 2)num = 0;
+            picChange();
+        }
+
+        // 문제1 : prevPic함수를 만들어서 사진을 뒤로 돌리는
+        // 로직도 추가해주세요
+        function prevPic(){
+            num--;
+            if(num < 0)num = 2;
+            picChange();
+        }
+
+        function picChange(){
+            console.log(document.getElementById("pic"));
+             // id가 pic인 요소의 src속성을 num으로 바꿔줌
+            document.getElementById("pic").src = "img/img" + num + ".jpg";
+            return false;
+        }
+        
+        // 그림 파일 크깆조정
+        // document.getElementById("pic").width = 300;
+    </script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>이미지 넘기기</h1>
+    <a href="#" onclick=prevPic();><<</a>
+    <img src="" alt="그림" id="pic" width="500px">
+    <a href="#" onclick=nextPic();>>></a>
+</body>
+</html>

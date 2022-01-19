@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        // 자바스크립트 역시 자바처럼 new키워드를 사용합니다
+        // 클래스를 만들고, 그 클래스의 객체를 생성해서
+        // 사용합니다.
+        // 역시 js에서의 클래스의 목족도 변수와 함수를
+        // 같은소속으로 담아 샤용하기 위함이며
+        //  마치 자바의 java.util.* 과 같이
+        // 미리 만들어져있는 내장클래스를 쓸수도 있습니다.
+
+        // 내장클래스로 대표적인 예시는 document가 있고
+        // 이외에도 Date,Array,Math등 자바와 유사한
+        // 여러 종류의 객체들이 있습니다.
+        
+        //  날짜 관련 객체 date활용
+        document.write("<h1>현재날짜/시간정보</h1>")
+
+        var today = new Date(); // 날짜정보를 담당하는 클래스 객체 생성
+        var nowyear = today.getFullYear() // 연도 얻어오기
+
+        document.write("년도 : "+nowyear+"<br/>");
+        
+        // 월
+        var nowmonth = today.getMonth()+1;
+        document.write("월 : " + nowmonth + "<br/>")
+
+        // 일
+        var nowdate = today.getDate();
+        document.write("일 : " + nowdate + "<br/>")
+
+        // 요일
+        var nowday = today.getDay();
+        document.write("요일 : " + nowday + "<br/>")
+
+        // 시
+        var nowhour = today.getHours();
+        document.write("시 : " + nowhour + "<br/>")
+
+        // 분
+        var nowminute = today.getMinutes();
+        document.write("분 : " + nowminute + "<br/>")
+
+        //초
+        var nowseconds = today.getSeconds();
+        document.write("초 : " + nowseconds + "<br/>")
+
+        // 유닉스시간
+        // 1970년도 1월 1일 00시 00분 00초를 기점으로 몇초나 흘럿는지
+
+        var realtime = today.getTime()/1000;
+        document.write("몇초나 흘럿는지 : " + realtime);
+        </script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
