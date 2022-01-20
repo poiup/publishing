@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        // 전역변수와 지역변수는 소속된 지역이 다르기때문에
+        // 같은 변수명으로 존재할수 있으니ㅏ
+        // 호출시에는 엄격하게 구분되에 호출됩니다.
+        //  변수명을 전역/지역별로 동일하게 만들어 쓰는것음
+        // 권장되지는 않으나 혹은 불가피하게 쓰게된다면
+        // 구분을 잘해서 로직을 돌려야합니다
+        var i = 10; // 전역변수
+        var num = 20;  // 전역변수
+
+        function theTest(){
+            var num = i + 200; // 지역변수
+            alert(num);
+        }
+
+        theTest();
+        function theFnc(){
+            document.write(num); // 전역변수 호출
+        }
+        theFnc();
+    </script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>

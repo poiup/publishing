@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        // 자바스크립트에서는 다양한 방식으로 이벤트를 
+        // 통제할수 있습니다.
+        //  아래 이벤트 함수들은 모두 자주쓰는것은 아니지만
+        // 한번 정리해보고 실습해보겠습니다
+        // onload = 문서가 모두 로드되면 이벤트 발생(많이씀)
+        // onunload  = 문서 종료시 이벤트 발생
+        // ondblclick = 해당요소를 더블클릭시 발생
+        // onclick  = 해당요소 한번클릭시 발생 (많이씀)
+        // onkeypress = 해당키를 눌렀을때 발생
+        // onkeydown = 해당키가 눌러졌을때 발생
+        // onkeyup = 해당키가 눌러졌다 땔때 발생
+        // onmouseover = 마우스 커서가 대상에 올려지면 발생
+        // onfocus = 해당요소가 타겟으로 잡힐때 발생
+        // onmouseout = 대상에서 마우스커서가 벗어나면 발생
+        // onblur = onfocus상태에서 벗어나면 발생
+        // onsubmit = 전송버튼을 눌럿을때 발생(많이씀_)
+        // onreset = 취소버튼을 눌럿을때 발생
+        // onchange = 입력요소 값이 변경되면 발생(많이씀)
+        //  onmousemove = 마우스가 움직일때마다 발생
+        // onresize = 브라우저 창크기가 조절될때 발생
+        // onerror = 문서 이미지 불러오는 도중 에러발생시 발생
+        // onabort = 문서 이미지 불러오다 중단되면 발생
+
+        // 코드 로딩전 요소를 받아오려다 null이 나는 방식
+        // #noData를 변수 h1tag에 저장해주신다음
+        // 콘솔에 찍어주세요
+        
+        // var h1tag = document.getElementById("noData");
+        // console.log(h1tag);
+        // h1태그가 생성되기 전에 script부분이 돌아가기때문에
+        // h1을 찾지못해 null로 나옴
+
+        // 코드 로딩후에 데이터 얻어오도록 처리
+        window.loan = function(){
+            var h1tag = document.getElementById("noData");
+        console.log(h1tag);
+        }
+    </script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="noData">테스트</h1>
+    <!-- 아까와 같은 현상을 방지하지위해 h1태그가 생성된 다음 -->
+    <!-- script를 살행하면 정상적으로 잡히게됩니다. -->
+    <!-- <script>
+        var h1tag = document.getElementById("noData");
+        console.log(h1tag);
+    </script> -->
+</body>
+</html>

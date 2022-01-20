@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        // 태그에 이벤트를 거는 방식은 잘 작동하지만
+        //  두개이상의 이벤트를 걸떄는 하나씩만 작동하는 문제가 있습니다.
+        // 따라서 하나의 태그에 두개이상의 이벤트를 동시에 걸기위해서는
+        // 기존 onclick 추가방식이 아닌
+        // 다른방시으로 이벤트를 걸어야됩니다.
+        //  현재 사용하는방식을 DOM level 0 라고 부릅니다.
+        function thefnc(){
+            alert("경고문구")
+        }
+
+        // 두번째 이벤트
+        function thefnc2(){
+            alert("경고문구!!!!!!!!!")
+        }
+
+        console.log(thefnc)
+        var mybtn2 = document.getElementById("btn2");
+        mybtn2.onclick = thefnc;
+        mybtn2.onclick = thefnc2;
+    </script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn1" onclick=thefnc();thefnc2();>버튼1</button>
+    <button id="btn2">버튼2</button>
+</body>
+</html>
