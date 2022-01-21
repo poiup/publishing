@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        // 원거리 선택자
+        // 태그에 지정한 ID를 이용해 특정태그만 선택할수있는 선택자입니다.
+        // 선택 대상.getElementId("아이디명")
+
+        // 문서 로딩이 끝난 다음 자바스크립트를 실행하도록 
+        // window.onload 내부에 작성하겠습니다.
+        // 아래에 window.onload 세팅을 해주세요
+        window.onload = function(){
+            var myObj = document.getElementById("title")
+            // console.log(myObj)
+            myObj.style.color = "blue"
+
+            // 특정 태그들을 들고오기
+            // 선택대상.getElementsByTagName("태그명")
+
+            // 1. ul태그 전체를 가져와보세요
+            // 변수명은 myList입니다.
+            var myList = document.getElementsByTagName("ul");
+            
+            // console.log(myList);
+
+            // getElenemtsByTagName등과 같이 s로 끝나는 선택자들은
+            // list로 요소를 가져오기 때문에
+            // 인덱싱해서 원하는 자료를 얻습니다
+            // 처음으로 나온 ul 조회
+            // console.log(myList[0]);
+            // ul#list 조회
+            // console.log(myList[1]);
+
+            // 이번에는 문서 전체를 범위로 하지 않고
+            // 0번쨰 ul에서 li태그만 모아주세요
+            // 변수이름은 myLi입니다.
+            var myLi = myList[0].getElementsByTagName("li");
+            console.log(myLi[1])
+
+            // getElements 계열은 자료를 가져올때 리스트로 가져옵니다.
+            // 설령 내부에 가져올수 있는 자료가 하나여도 리스트로 가여종ㅂ니다.
+            var myH1 = document.getElementsByTagName("h1");
+            console.log(myH1 + 2);
+
+            // myLi에 대해 반복문으로 테두리를 쳐 주세요
+            for(var i = 0; i < myLi.length; i++){
+                myLi[i].style.border = "solid 1px #000";
+            }
+
+
+            // 아래쪽 ul태그에 대해서
+            //  근거리선택자 홀수는 green 짝수는 gold를 쳐주세요
+            var myLi2 = myList[1].getElementsByTagName("li");
+            for(var i = 0; i < myLi2.length; i++){
+                if(i % 2 == 0){
+                    myLi2[i].style.backgroundColor = "gold";
+                } else {
+                    myLi2[i].style.backgroundColor = "green";
+                }
+            }
+
+
+
+            // for(var i = 0; i < myList.length; i++){
+            //     var myLis = myList[i].getElementsByTagName("li");
+            //     for(var j = 0; j < myLis.length; j++){
+            //         if ( i % 2 == 0){
+            //             myLis[j].style.backgroundColor = "gold";
+            //         } else {
+            //             myLis[j].style.backgroundColor = "green";
+            //         }
+            //         myLis[j].style.border = "solid 1px #000"
+            //     }
+            // }
+            
+            
+        }
+
+    </script>
+
+    <style>
+        h1 {border: solid 1px #000;}
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>선택자</h1>
+    <h2 id="title">원거리 선택자</h2>
+    <ul>
+        <li>선택지</li>
+        <li>원거리 선택지</li>
+    </ul>
+    <h2>근거리 선택자</h2>
+    <ul id="list">
+        <li>parentNode</li>
+        <li>childNodes</li>
+        <li>children</li>
+        <li>firstChild</li>
+        <li>previousSibling</li>
+        <li>nextibing</li>
+    </ul>
+</body>
+</html>
