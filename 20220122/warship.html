@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        
+        var trycount = 0;
+        var leftcount = 60;
+        var percent = (1/leftcount)*100;
+        var expectedValue = 0;
+        while(true){
+            percent = (1/leftcount)*100;
+            expectedValue += percent;
+            trycount ++;
+            leftcount --;
+            if(expectedValue >= 100){
+                document.write("예상 시도횟수는 " + trycount + "이며 예상금액은 " + trycount * 4476 + "입니다");
+                break;
+            }
+            document.write(trycount + "번째 시도 성공확률은" +expectedValue+" 예상금액은 " + trycount * 4476 + "입니다 <br/>");
+
+        }
+    </script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
