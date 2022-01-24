@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        // 01번 파일을 통해 텍스트를 집어넣는 로직을 연습해봤습니다.
+        // 이번 파일에서는 태그 사이에 새로운 자식태그를
+        // 끼워넣는 방법에 대해 알아보겠습니다
+
+        // 순서
+        // 1. createElement를 이용해 태그를 생성합니다
+        // 2. 생성된 태그 내부에 내용물이 필요하다면 채워줍니다.
+        // 3. DOM요소에 appendChild를 이용해서 넣어줍니다
+
+        // 태그 로딩후 자바스크립트 코드가 돌아가게 처리해주세요
+        window.onload = function(){
+
+            // 태그 요소 생성(위치는 없음)
+            var newPtag = document.createElement("p");
+            var newBtn1 = document.createElement("button")
+            var newBtn2 = document.createElement("button")
+
+            // 태그 내부에 들어갈 문자는, 먼저 createTextNode로
+            // 생성을 해두고
+            // 추후에 집어넣는다는 명령을 한번더 넣어줘야합니다
+            var text1 = document.createTextNode("버튼1");
+            var text2 = document.createTextNode("버튼2");
+
+            // 태그내부에 text집어넣기
+            // .appendChild(자식요소); 를 넣으면
+            //  태그를 넣는경우 자식태그로 들어가고
+            // 텍스트로 넣는경우 태그사이에 택스트로 들어갑니다
+            newBtn1.appendChild(text1);
+            newBtn2.appendChild(text2);
+            console.log(newBtn1,newBtn2);
+            newPtag.appendChild(newBtn1);
+            newPtag.appendChild(newBtn2);
+            console.log(newPtag);
+
+            // 속성부여하기
+            //  id,class등을 부여합니다.
+            // 요소명.setAttribute("속성명,부여할 값");
+            // id에 btn1을 부여하는경우
+            newBtn1.setAttribute("id","btn1");
+
+            // body태그에 위에서 생성한 p태그를 끼워넣어주세요
+            document.getElementsByTagName("body")[0].appendChild(newPtag);
+
+        }
+    </script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="theBox">
+        <h1>요소 생성 연습</h1>
+    </div>
+</body>
+</html>

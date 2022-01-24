@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        // DOM 내부 요소를 고치는 작업을 해보겠습니다.
+        // DOM 조작과 onclick이벤트를 같이 조합해서
+        // 사용자가 특정 요소를 클릭했을때
+        // DOM 조작이 일어나도록 합니다.
+        // DOM조작 잉라는 용어는 그냥 html화면에
+        // 변화를 주는 작업이라고 생각하셔도 됩니다.
+        // 모든 문서 로딩이 끝나고 스크립트를 실행하도록 초기세팅
+        window.onload = function(){
+            // #number,#increase,#decrease를 각각
+            // 변수 number, incBtn, devBtn에 저장해주세요.
+            var number = document.getElementById("number");
+            var incBtn = document.getElementById("increase");
+            var devBtn = document.getElementById("decrease");
+
+            console.log(number.parentNode);
+            // #increase, decrease의 부모태그를 찍어주세요.
+
+            console.log(increase.parentNode.parentNode);
+            console.log(decrease.parentNode.parentNode);
+
+            // div가 콘솔에정확하게 찍히게 해주세요
+            var div = document.getElementsByTagName("div")[0];
+            console.log(div);
+
+            console.log(div.childNodes);
+
+            // children으로 자식태그를 얻어오면
+            // childNodes와 유사하지만 엔터키로 개행된 부분은
+            // 따로 가져오지않고 태그요소만 가져옵니다.
+            console.log(div.children);
+
+            // 일일이 인덱싱을 가져오기 복잡한경우
+            // 첫번째나 마지막 요소등은 근접 선택자에서
+            // 따로 선택할수 있는 옵션을 제공합니다.
+            // firstChild - 첫번째 자식태그
+            // lastChild - 마지막 자식태그
+            console.log(div.firstChild);
+
+            // previousSibling, nextSibling을 통해 
+            // 형제 태그간 순번을 하나씩 뒤로 넘기거나
+            // 하나씩 앞으로 가져올수 있습니다.
+            // #reset을 잡아서 변수에 저장해주시고
+            // 위 두명령어를 이용해 increase와
+            // decrease를 콘솔에 찍어주세요.
+            var resetBtn = document.getElementById("reset");
+            // nextSibling은 태그인지 아니면 엔터키에 의한 개행인지 구분X
+            console.log(resetBtn.nextSibling.nextSibling);
+            console.log(resetBtn.previousElementSibling);  
+            // tag요소들끼리만 잡아서 가져오고싶다면
+            // html에서는 태그요소를 element(요소)라고 부릅니다.
+            // 따라서 n/pElenmentSibling을 사용하시면
+            // 태그끼리로만 다음요소, 이전요소를 구분합니다.
+
+            // 이제 이벤트를 자바스크립트로 붙여서
+            // 얻어온 변수.onclikc= function (){} 형식으로도 지정할수 있습니다
+            // innerText는 여닫는 태그 사이에 택스트를 의미합니다.
+            console.log(number.innerText);
+
+            // incBtn을 누를때마다 number의 수가 증가하게 고쳐주세요
+            incBtn.onclick = function(){
+                number.innerText = parseInt(number.innerText)+1;
+            }
+            devBtn.onclick = function(){
+                number.innerText = parseInt(number.innerText)-1;
+            }
+            resetBtn.onclick = function(){
+                number.innerText = number.innerText = 0;
+            }
+
+            var redBtn = document.getElementById("red");
+            var blueBtn = document.getElementById("blue");
+            var blackBtn = document.getElementById("black");
+
+            redBtn.onclick = function(){
+                number.style.color = "red"
+            }
+            blueBtn.onclick = function(){
+                number.style.color = "blue"
+            }
+            blackBtn.onclick = function(){
+                number.style.color = "black"
+            }
+
+        }
+    </script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2 id="number">0</h2>
+    <div>
+        <button id="increase">+1</button>
+        <button id="reset">0</button>
+        <button id="decrease">-1</button>
+        <br>
+        <button id="red">빨강</button>
+        <button id="blue">파랑</button>
+        <button id="black">검정</button>
+        <br>
+        
+    </div>
+</body>
+</html>
