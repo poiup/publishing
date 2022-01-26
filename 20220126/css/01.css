@@ -1,0 +1,28 @@
+@charset 'uft-8';
+*{
+    margin: 0;
+    padding:0;
+}
+li{
+    list-style: none;
+}
+body { 
+    font:12px/1.5 "굴림", Gulim;
+}
+h2 { 
+    margin-top: 30px;
+}
+a {
+    color: #333;
+}
+#textZone {
+    width: 700px;
+}
+#listWrap {
+    background-color: #cfcfcf;
+    width: 110px;
+    padding: 10px;
+}
+.list1 {
+    display: none;
+}

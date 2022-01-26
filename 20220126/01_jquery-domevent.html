@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="css/01.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        // 이벤트
+        // 바닐라js와 마찬가지로 제이쿼리에서도
+        // 특정 element에 이벤트를 연결할수 있습니다.
+        // 이런 이벤트를 붙으는 행위를 가리켜 이벤트 바인딩
+        // 이라고도 합니다(event binding, 이벤트 묶기)
+
+        // 이벤트 종류 및 설명
+        // click() - 클릭시
+        // dbclick()- 더블클릭시
+        // mouseover() - 마우스가 선택요소 위로 올라갈때
+        // mouseleave() - 마우스가 선택요소 위에서 내려갈때
+        // focus() - 대상에 포커싱(탭키들으로 타겟잡기)시 함수 실행
+        // blur() - 포커싱에서 해제될시 합수 실행
+        // focusin() - input요소 포커싱이 풀릴시 함수 실행
+        // focusout() - input요소 포커싱이 풀릴시 함수 실행
+        // keydown() -  키입력 감지시 함수 실행
+        // keypress() = 키입력 감지시 함수 실행
+        // mouseenter() - 마우스가 선택요소 내로 이동시 함수 실행
+        // mousemove() - 마우스가 움직일때마다 함수 실행
+        // resize() - 창크기가 변할때마다 함수 실행
+        // submit() - submit버튼 눌릴시마다 함수 실행
+        // reset() = reset버튼 눌릴시마다 함수 실행
+        // toggle() = 클릭할때마다 함수 실행
+        // hover() - 마우스 올렸을때 함수 실행
+        // unload() - 문서종료시 함수실행
+        // change() - 값이 바뀌고 포커스 옴겨졌을떄 실행
+        // bind() - 여러개의 이벤트를 적용할떄 사용
+        
+        // 실습용코드
+        // window.onload
+        </script>
+    <script>
+        $(() => {
+            //  btn1클릭시 textZone색상 파랑으로
+            $("#btn1").click(()=>{
+                $("#textZone").css("color", "blue");
+            });
+            // btn2클릭시 textZone배경 노란색으로 focus이용
+            $("#btn2").focus(()=>{
+                $("#textZone").css("background-color", "yellow");
+            })
+            // btn3에 .bind를 활용해서 2개의 동작이벤트를 걸어보겠습니다.
+            // .bind("이벤트1 이벤트2...", 함수);
+            $("#btn3").bind("mouseover focus", () => {
+                // 체이닝으로 css2개걸기
+                // #textZone의 글씨색 녹색, 볼드처리해주세요
+                $("#textZone").css("color", "green").css("font-weight", "bold");
+            })
+            
+            // #listWrap에 mouseenter시
+            // .list의 .css() display속성을 block으로
+            // mouseLeave시 displa속성을 none으로
+            $("#listWrap").mouseenter(()=>{
+                $(".list1").css("display","block");
+            })
+            $("#listWrap").mouseleave(()=>{
+                $(".list1").css("display","none");
+            })
+
+            // toggle은 함수 여러개를 나열해서 넣으면
+            // 클릭할때마다 함수가 바뀌어서 실행됩니다
+            // .toggle(함수1(){},함수2(){}........);
+            // $("#btn4").toggle(function(){
+            //     $(this).next().css("background-color", "red");
+            // },
+            // function(){
+            //     $(this).next().css("background-color", "orange");
+            // },
+            // function(){
+            //     $(this).next().css("background-color", "yellow");
+            // },
+            // function(){
+            //     $(this).next().css("background-color", "white");
+            // })
+
+            // hover는 마우스가 선택요소 역역에 오버되거나
+            // 아웃될때 실행되는 함수를 각각 지정합니다
+            //  mouseenter, mouseleave는 마우스가 올라가거나
+            // 내려갈때 적용된 내용이 영구히 반영되지만
+            // hover는 그 두개를 동시에 묶어주기 떄문에
+            // 항상 마우스를 올린동안만 실행되는 로직을 작성하게됩니다.
+            $(".hover").hover(function(){
+                // 마우스가 올라간동안
+                $(this).css("color", "aqua");
+            },function(){
+                // 마우스가 빠져나올때
+                $(this).css("color", "red");
+            })
+        })
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="wrap">
+        <h1>이벤트 연습</h1>
+        <p id="textZone">
+            웹 브라우저에서 버튼을 클릭한다거나 마우스를
+            움직이너가 하는 모든 행위를 이벤트라고합니다
+            그리고 이벤트 발생시 함수의 실행문이 수행되도록
+            이벤트를 지정하는것을 이벤트 핸들러라고 합니다
+        </p>
+        <h2>click 메서드</h2>
+        <p><button id="btn1">click</button></p>
+
+        <h2>mouseover 메서드</h2>
+        <p><button id="btn2">mouseover</button></p>
+
+        <h2>bind 메서드</h2>
+        <p><button id="btn3">bind</button></p>
+
+        <h2>mouseleave 메서드</h2>
+        <div id="listWrap">
+            <h3>관련사이트</h3>
+            <ul class="list1">
+                <li><a href="#">list1</a></li>
+                <li><a href="#">list2</a></li>
+                <li><a href="#">list3</a></li>
+                <li><a href="#">list4</a></li>
+            </ul>
+        </div>
+        
+        <h2>toggle 메서드</h2>
+        <p><button id="btn4">toggle</button></p>
+        <p>
+            누를때마다 실행 함수를
+            차례대로 번갈아가면서
+            실행합니다 <br/>
+            위 토글버튼을 클릭해보세요
+        </p>
+
+        <h2>hover 메서드</h2>
+        <h3><a href="#" class="hover">hover</a></h3>
+    </div>
+</body>
+</html>
