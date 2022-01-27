@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            width: 900px;
+            margin: 0 auto;
+        }
+        #header {
+            width: 900px;
+            margin: 0 auto;
+        }
+        h1 {
+            text-align: center;
+            color: green;
+            background-color: skyblue;
+        }
+        
+        
+        #content > div:first-child{
+            padding-left: 0;
+            padding-right: 0;
+        }
+        .menu { 
+            background-color: #bbb;
+            height: 100%;
+        }
+        .menu li {
+            margin-left: 18px;
+        }
+        #footer {
+            margin: 0 auto;
+            width: 900px;
+            margin-top: 18px;
+            border-top: 1px solid #bbb;
+            padding-top: 24px;
+        } 
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="row" id="header">
+        <h1>
+            헤더가 들어갈부분
+        </h1>
+    </div>
+    <div class="row" id="content">
+        <div class="col-md-2">
+            <ul class="menu">
+                <li>메뉴1</li>
+                <li>메뉴2</li>
+                <li>메뉴3</li>
+                <li>메뉴4</li>
+            </ul>
+        </div>
+        <div class="col-md-10">
+            <div class="row">
+                <h1 class="content_title">타이틀1</h1>
+                <p class="content_text">
+                    Lorem ipsum dolor sit amet, congue definitionem sit ut, ullum delicata accusamus mel at. Zril antiopam vituperata ea sea. No pri inani deleniti liberavisse, cu simul ceteros forensibus eam, ius ea suavitate mediocritatem necessitatibus. Unum zril adolescens est an, ei nisl graeco periculis duo. Cu sit duis omnis eligendi.
+                </p>
+            </div>
+            <div class="row">
+                <h1 class="content_title">타이틀2</h1>
+                <p class="content_text">
+                    Lorem ipsum dolor sit amet, congue definitionem sit ut, ullum delicata accusamus mel at. Zril antiopam vituperata ea sea. No pri inani deleniti liberavisse, cu simul ceteros forensibus eam, ius ea suavitate mediocritatem necessitatibus. Unum zril adolescens est an, ei nisl graeco periculis duo. Cu sit duis omnis eligendi.
+                </p>
+            </div>
+            <div class="row">
+                <h1 class="content_title">타이틀3</h1>
+                <p class="content_text">
+                    Lorem ipsum dolor sit amet, congue definitionem sit ut, ullum delicata accusamus mel at. Zril antiopam vituperata ea sea. No pri inani deleniti liberavisse, cu simul ceteros forensibus eam, ius ea suavitate mediocritatem necessitatibus. Unum zril adolescens est an, ei nisl graeco periculis duo. Cu sit duis omnis eligendi.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="row" id="footer">
+        푸터
+    </div>
+</body>
+</html>
